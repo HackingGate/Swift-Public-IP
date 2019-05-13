@@ -21,7 +21,7 @@ let package = Package(
         .target(
             name: "SwiftPublicIP",
             dependencies: [],
-            path: "Sources")
+            path: "Sources"),
         .testTarget(
             name: "SwiftPublicIPTests",
             dependencies: ["SwiftPublicIP"]),
