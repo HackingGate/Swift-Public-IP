@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		52D6D9871BEFF229002C0205 /* SwiftPublicIP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* SwiftPublicIP.framework */; };
+		760928F622899554004CAE43 /* PublicIPAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760928F522899554004CAE43 /* PublicIPAPI.swift */; };
+		760928F722899554004CAE43 /* PublicIPAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760928F522899554004CAE43 /* PublicIPAPI.swift */; };
+		760928F822899554004CAE43 /* PublicIPAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760928F522899554004CAE43 /* PublicIPAPI.swift */; };
+		760928F922899554004CAE43 /* PublicIPAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760928F522899554004CAE43 /* PublicIPAPI.swift */; };
+		7609290122899825004CAE43 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7609290022899825004CAE43 /* main.swift */; };
 		8933C7851EB5B820000D00A4 /* SwiftPublicIP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7841EB5B820000D00A4 /* SwiftPublicIP.swift */; };
 		8933C7861EB5B820000D00A4 /* SwiftPublicIP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7841EB5B820000D00A4 /* SwiftPublicIP.swift */; };
 		8933C7871EB5B820000D00A4 /* SwiftPublicIP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7841EB5B820000D00A4 /* SwiftPublicIP.swift */; };
@@ -43,12 +48,28 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		760928FC22899824004CAE43 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		52D6D97C1BEFF229002C0205 /* SwiftPublicIP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftPublicIP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9861BEFF229002C0205 /* SwiftPublicIP-iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftPublicIP-iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9E21BEFFF6E002C0205 /* SwiftPublicIP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftPublicIP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9F01BEFFFBE002C0205 /* SwiftPublicIP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftPublicIP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6DA0F1BF000BD002C0205 /* SwiftPublicIP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftPublicIP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		760928F522899554004CAE43 /* PublicIPAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicIPAPI.swift; sourceTree = "<group>"; };
+		760928FE22899824004CAE43 /* SwiftPublicIP-CLI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "SwiftPublicIP-CLI"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7609290022899825004CAE43 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		760929052289B2F4004CAE43 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8933C7841EB5B820000D00A4 /* SwiftPublicIP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftPublicIP.swift; sourceTree = "<group>"; };
 		8933C7891EB5B82A000D00A4 /* SwiftPublicIPTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftPublicIPTests.swift; sourceTree = "<group>"; };
 		AD2FAA261CD0B6D800659CF4 /* SwiftPublicIP.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SwiftPublicIP.plist; sourceTree = "<group>"; };
@@ -94,6 +115,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		760928FB22899824004CAE43 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DD7502771C68FCFC006590AF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -116,9 +144,11 @@
 		52D6D9721BEFF229002C0205 = {
 			isa = PBXGroup;
 			children = (
+				760929052289B2F4004CAE43 /* README.md */,
 				8933C7811EB5B7E0000D00A4 /* Sources */,
 				8933C7831EB5B7EB000D00A4 /* Tests */,
 				52D6D99C1BEFF38C002C0205 /* Configs */,
+				760928FF22899825004CAE43 /* SwiftPublicIP-CLI */,
 				52D6D97D1BEFF229002C0205 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -133,6 +163,7 @@
 				52D6DA0F1BF000BD002C0205 /* SwiftPublicIP.framework */,
 				DD75027A1C68FCFC006590AF /* SwiftPublicIP-macOS Tests.xctest */,
 				DD75028D1C690C7A006590AF /* SwiftPublicIP-tvOS Tests.xctest */,
+				760928FE22899824004CAE43 /* SwiftPublicIP-CLI */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -146,10 +177,19 @@
 			path = Configs;
 			sourceTree = "<group>";
 		};
+		760928FF22899825004CAE43 /* SwiftPublicIP-CLI */ = {
+			isa = PBXGroup;
+			children = (
+				7609290022899825004CAE43 /* main.swift */,
+			);
+			path = "SwiftPublicIP-CLI";
+			sourceTree = "<group>";
+		};
 		8933C7811EB5B7E0000D00A4 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				8933C7841EB5B820000D00A4 /* SwiftPublicIP.swift */,
+				760928F522899554004CAE43 /* PublicIPAPI.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -303,6 +343,23 @@
 			productReference = 52D6DA0F1BF000BD002C0205 /* SwiftPublicIP.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		760928FD22899824004CAE43 /* SwiftPublicIP-CLI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7609290222899825004CAE43 /* Build configuration list for PBXNativeTarget "SwiftPublicIP-CLI" */;
+			buildPhases = (
+				760928FA22899824004CAE43 /* Sources */,
+				760928FB22899824004CAE43 /* Frameworks */,
+				760928FC22899824004CAE43 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SwiftPublicIP-CLI";
+			productName = "SwiftPublicIP-CLI";
+			productReference = 760928FE22899824004CAE43 /* SwiftPublicIP-CLI */;
+			productType = "com.apple.product-type.tool";
+		};
 		DD7502791C68FCFC006590AF /* SwiftPublicIP-macOS Tests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DD7502821C68FCFC006590AF /* Build configuration list for PBXNativeTarget "SwiftPublicIP-macOS Tests" */;
@@ -345,7 +402,7 @@
 		52D6D9731BEFF229002C0205 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = SwiftPublicIP;
 				TargetAttributes = {
@@ -368,6 +425,10 @@
 					52D6DA0E1BF000BD002C0205 = {
 						CreatedOnToolsVersion = 7.1;
 						LastSwiftMigration = 1020;
+					};
+					760928FD22899824004CAE43 = {
+						CreatedOnToolsVersion = 10.2.1;
+						ProvisioningStyle = Automatic;
 					};
 					DD7502791C68FCFC006590AF = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -399,6 +460,7 @@
 				52D6D9851BEFF229002C0205 /* SwiftPublicIP-iOS Tests */,
 				DD7502791C68FCFC006590AF /* SwiftPublicIP-macOS Tests */,
 				DD75028C1C690C7A006590AF /* SwiftPublicIP-tvOS Tests */,
+				760928FD22899824004CAE43 /* SwiftPublicIP-CLI */,
 			);
 		};
 /* End PBXProject section */
@@ -460,6 +522,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				760928F622899554004CAE43 /* PublicIPAPI.swift in Sources */,
 				8933C7851EB5B820000D00A4 /* SwiftPublicIP.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -476,6 +539,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				760928F822899554004CAE43 /* PublicIPAPI.swift in Sources */,
 				8933C7871EB5B820000D00A4 /* SwiftPublicIP.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,6 +548,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				760928F922899554004CAE43 /* PublicIPAPI.swift in Sources */,
 				8933C7881EB5B820000D00A4 /* SwiftPublicIP.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -492,7 +557,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				760928F722899554004CAE43 /* PublicIPAPI.swift in Sources */,
 				8933C7861EB5B820000D00A4 /* SwiftPublicIP.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		760928FA22899824004CAE43 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7609290122899825004CAE43 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -854,6 +928,49 @@
 			};
 			name = Release;
 		};
+		7609290322899825004CAE43 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		7609290422899825004CAE43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		DD7502831C68FCFC006590AF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -965,6 +1082,15 @@
 			buildConfigurations = (
 				52D6DA211BF000BD002C0205 /* Debug */,
 				52D6DA221BF000BD002C0205 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7609290222899825004CAE43 /* Build configuration list for PBXNativeTarget "SwiftPublicIP-CLI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7609290322899825004CAE43 /* Debug */,
+				7609290422899825004CAE43 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
