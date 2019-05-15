@@ -1,9 +1,9 @@
 Pod::Spec.new do |s|
   s.name         = "SwiftPublicIP"
-  s.version      = "0.1"
+  s.version      = "0.0.1"
   s.summary      = ""
   s.description  = <<-DESC
-    Your description here.
+    Swift library for checking your public IP address.
   DESC
   s.homepage     = "https://github.com/HackingGate/Swift-Public-IP"
   s.license      = { :type => "MIT", :file => "LICENSE" }
