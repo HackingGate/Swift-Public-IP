@@ -15,8 +15,8 @@ public enum APIService {
 
 public enum IPProtocol {
     case auto
-    case IPv4
-    case IPv6
+    case ipv4
+    case ipv6
 }
 
 public func getPublicIP(apiService: APIService, ipProtocol: IPProtocol?, completion: @escaping (String?, Error?) -> Void) {
@@ -30,10 +30,10 @@ public func getPublicIP(apiService: APIService, ipProtocol: IPProtocol?, complet
         case .auto:
             url = icanhazipAPI.ipAPIURL()
             break
-        case .IPv4:
+        case .ipv4:
             url = icanhazipAPI.ipv4APIURL()
             break
-        case .IPv6:
+        case .ipv6:
             url = icanhazipAPI.ipv6APIURL()
             break
         }
@@ -42,10 +42,10 @@ public func getPublicIP(apiService: APIService, ipProtocol: IPProtocol?, complet
         case .auto:
             url = icanhazipAPI.ipAPIURL()
             break
-        case .IPv4:
+        case .ipv4:
             url = ipv6testAPI.ipv4APIURL()
             break
-        case .IPv6:
+        case .ipv6:
             url = ipv6testAPI.ipv6APIURL()
             break
         }

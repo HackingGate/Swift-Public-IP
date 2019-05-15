@@ -30,7 +30,7 @@ struct APIServiceClass {
 
 let icanhazipAPI = APIServiceClass(ipAPI: "https://icanhazip.com",
                                    ipv4API: "https://ipv4.icanhazip.com",
-                                   ipv6API: "https://ipv4.icanhazip.com")
+                                   ipv6API: "https://ipv6.icanhazip.com")
 
 let ipv6testAPI = APIServiceClass(ipAPI: "https://v4v6.ipv6-test.com/api/myip.php",
                                   ipv4API: "https://v4.ipv6-test.com/api/myip.php",
