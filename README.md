@@ -19,9 +19,15 @@ getPublicIP(apiService: .icanhazip, ipProtocol: .ipv4) { (string, error) in
 
 ### Carthage
 
+Add it in the Cartfile.
+
 ```
 github "HackingGate/Swift-Public-IP" "master"
 ```
+
+Run `carthage update`.
+
+Add the SwiftPublicIP framework as an embedded binary to your .xcodeproj file.
 
 ### CocoaPods
 
