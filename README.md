@@ -42,6 +42,29 @@ DON'T use it in production environment.
 
 I will publish it to the official CocoaPods repo in the future. 
 
+### Swift Package Manager (SPM)
+
+You need Package.swift file.
+
+```swift
+// swift-tools-version:5.0
+
+import PackageDescription
+
+let package = Package(
+    name: "YourAwesomeApp",
+    dependencies: [
+        .package(url: "https://github.com/HackingGate/Swift-Public-IP", from: "0.0.1"),
+    ],
+    targets: [
+        .target(
+            name: "YourAwesomeApp",
+            dependencies: ["SwiftPublicIP"],
+            path: "Sources")
+    ]
+)
+```
+
 ### Git Submodule or Manual
 
 Add as a git submodule.
