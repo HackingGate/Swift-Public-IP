@@ -35,3 +35,17 @@ pod 'SwiftPublicIP', '~> 0.0.1'
 DON'T use it in production environment.
 
 I will publish it to the official CocoaPods repo in the future. 
+
+#### Git Submodule or Manual
+
+Add as a git submodule.
+
+```
+git submodule add https://github.com/HackingGate/Swift-Public-IP
+```
+
+If you don't use git, just download it manually.
+
+Drag SwiftPublicIP.xcodeproj to your project.
+
+Add the SwiftPublicIP framework as an embedded binary to your .xcodeproj file.
