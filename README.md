@@ -22,7 +22,7 @@ getPublicIP(url: PublicIPAPIURLs.ipv4.icanhazip.rawValue) { (string, error) in
 Add it in the Cartfile.
 
 ```
-github "HackingGate/Swift-Public-IP" "master"
+github "HackingGate/Swift-Public-IP" "0.0.1"
 ```
 
 Run `carthage update`.
