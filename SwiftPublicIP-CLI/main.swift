@@ -13,7 +13,7 @@ print("Hello, World!")
 
 var sema = DispatchSemaphore(value: 0)
 
-getPublicIP(apiService: .icanhazip, ipProtocol: .ipv4) { (string, error) in
+getPublicIP(url: PublicIPAPIURLs.ipv4.icanhazip.rawValue) { (string, error) in
     if let error = error {
         print(error.localizedDescription)
     } else if let string = string {

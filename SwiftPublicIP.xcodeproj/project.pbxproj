@@ -13,6 +13,11 @@
 		760928F822899554004CAE43 /* PublicIPAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760928F522899554004CAE43 /* PublicIPAPI.swift */; };
 		760928F922899554004CAE43 /* PublicIPAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760928F522899554004CAE43 /* PublicIPAPI.swift */; };
 		7609290122899825004CAE43 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7609290022899825004CAE43 /* main.swift */; };
+		763B7F3F228FC6930015E312 /* PublicIPAPIURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763B7F3E228FC6930015E312 /* PublicIPAPIURLs.swift */; };
+		763B7F40228FC6930015E312 /* PublicIPAPIURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763B7F3E228FC6930015E312 /* PublicIPAPIURLs.swift */; };
+		763B7F42228FC6930015E312 /* PublicIPAPIURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763B7F3E228FC6930015E312 /* PublicIPAPIURLs.swift */; };
+		763B7F43228FC6930015E312 /* PublicIPAPIURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763B7F3E228FC6930015E312 /* PublicIPAPIURLs.swift */; };
+		763B7F44228FC9D00015E312 /* PublicIPAPIURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763B7F3E228FC6930015E312 /* PublicIPAPIURLs.swift */; };
 		8933C7851EB5B820000D00A4 /* SwiftPublicIP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7841EB5B820000D00A4 /* SwiftPublicIP.swift */; };
 		8933C7861EB5B820000D00A4 /* SwiftPublicIP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7841EB5B820000D00A4 /* SwiftPublicIP.swift */; };
 		8933C7871EB5B820000D00A4 /* SwiftPublicIP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7841EB5B820000D00A4 /* SwiftPublicIP.swift */; };
@@ -70,6 +75,7 @@
 		760928FE22899824004CAE43 /* SwiftPublicIP-CLI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "SwiftPublicIP-CLI"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7609290022899825004CAE43 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		760929052289B2F4004CAE43 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		763B7F3E228FC6930015E312 /* PublicIPAPIURLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicIPAPIURLs.swift; sourceTree = "<group>"; };
 		8933C7841EB5B820000D00A4 /* SwiftPublicIP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftPublicIP.swift; sourceTree = "<group>"; };
 		8933C7891EB5B82A000D00A4 /* SwiftPublicIPTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftPublicIPTests.swift; sourceTree = "<group>"; };
 		AD2FAA261CD0B6D800659CF4 /* SwiftPublicIP.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SwiftPublicIP.plist; sourceTree = "<group>"; };
@@ -190,6 +196,7 @@
 			children = (
 				8933C7841EB5B820000D00A4 /* SwiftPublicIP.swift */,
 				760928F522899554004CAE43 /* PublicIPAPI.swift */,
+				763B7F3E228FC6930015E312 /* PublicIPAPIURLs.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -523,6 +530,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				760928F622899554004CAE43 /* PublicIPAPI.swift in Sources */,
+				763B7F3F228FC6930015E312 /* PublicIPAPIURLs.swift in Sources */,
 				8933C7851EB5B820000D00A4 /* SwiftPublicIP.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -540,6 +548,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				760928F822899554004CAE43 /* PublicIPAPI.swift in Sources */,
+				763B7F44228FC9D00015E312 /* PublicIPAPIURLs.swift in Sources */,
 				8933C7871EB5B820000D00A4 /* SwiftPublicIP.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -549,6 +558,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				760928F922899554004CAE43 /* PublicIPAPI.swift in Sources */,
+				763B7F42228FC6930015E312 /* PublicIPAPIURLs.swift in Sources */,
 				8933C7881EB5B820000D00A4 /* SwiftPublicIP.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -558,6 +568,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				760928F722899554004CAE43 /* PublicIPAPI.swift in Sources */,
+				763B7F40228FC6930015E312 /* PublicIPAPIURLs.swift in Sources */,
 				8933C7861EB5B820000D00A4 /* SwiftPublicIP.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -566,6 +577,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				763B7F43228FC6930015E312 /* PublicIPAPIURLs.swift in Sources */,
 				7609290122899825004CAE43 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
