@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		52D6D9871BEFF229002C0205 /* SwiftPublicIP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* SwiftPublicIP.framework */; };
+		7601E5CF229035610030CAB5 /* SwiftPublicIP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6DA0F1BF000BD002C0205 /* SwiftPublicIP.framework */; };
 		760928F622899554004CAE43 /* PublicIPAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760928F522899554004CAE43 /* PublicIPAPI.swift */; };
 		760928F722899554004CAE43 /* PublicIPAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760928F522899554004CAE43 /* PublicIPAPI.swift */; };
 		760928F822899554004CAE43 /* PublicIPAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760928F522899554004CAE43 /* PublicIPAPI.swift */; };
@@ -125,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7601E5CF229035610030CAB5 /* SwiftPublicIP.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,6 +158,7 @@
 				52D6D99C1BEFF38C002C0205 /* Configs */,
 				760928FF22899825004CAE43 /* SwiftPublicIP-CLI */,
 				52D6D97D1BEFF229002C0205 /* Products */,
+				760334EC229034E10002465D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -181,6 +184,13 @@
 				DD7502731C68FC20006590AF /* Tests */,
 			);
 			path = Configs;
+			sourceTree = "<group>";
+		};
+		760334EC229034E10002465D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		760928FF22899825004CAE43 /* SwiftPublicIP-CLI */ = {
