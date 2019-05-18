@@ -31,16 +31,15 @@ Add the SwiftPublicIP framework as an embedded binary to your .xcodeproj file.
 
 ### CocoaPods
 
-The library is under development, you have to import it manually. You can use [my CocoaPods repo](https://github.com/HackingGate/Specs). Podfile example below.
+Add it in the Podfile
 
 ```
-source 'https://github.com/HackingGate/Specs.git'
 pod 'SwiftPublicIP', '~> 0.0.1'
 ```
 
-DON'T use it in production environment.
+Run `pod install`.
 
-I will publish it to the official CocoaPods repo in the future. 
+If you only want try this pod without import it. Run  `pod try SwiftPublicIP`.
 
 ### Swift Package Manager (SPM)
 

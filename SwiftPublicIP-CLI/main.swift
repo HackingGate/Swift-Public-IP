@@ -13,11 +13,11 @@ print("Hello, World!")
 
 var sema = DispatchSemaphore(value: 0)
 
-getPublicIP(url: PublicIPAPIURLs.ipv4.icanhazip.rawValue) { (string, error) in
+SwiftPublicIP.getPublicIP(url: PublicIPAPIURLs.ipv4.icanhazip.rawValue) { (string, error) in
     if let error = error {
         print(error.localizedDescription)
     } else if let string = string {
-        print(string)
+        print(string) // Your IP address
     }
     sema.signal()
 }
