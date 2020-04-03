@@ -8,6 +8,10 @@
 
 import Foundation
 
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
+
 typealias CompletionHandler = (String?, Error?) -> Void
 
 func getPublicIPAddress(requestURL: URL, completion: @escaping CompletionHandler) {
