@@ -1,9 +1,10 @@
 Pod::Spec.new do |s|
   s.name         = "SwiftPublicIP"
-  s.version      = "0.0.1"
-  s.summary      = ""
+  s.version      = "0.0.2"
+  s.summary      = "Swift library for checking your public IP address."
   s.description  = <<-DESC
     Swift library for checking your public IP address.
+    Supports macOS, iOS, tvOS, watchOS and Linux.
   DESC
   s.homepage     = "https://github.com/HackingGate/Swift-Public-IP"
   s.license      = { :type => "MIT", :file => "LICENSE" }
@@ -16,4 +17,5 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/HackingGate/Swift-Public-IP.git", :tag => s.version.to_s }
   s.source_files  = "Sources/**/*"
   s.frameworks  = "Foundation"
+  s.swift_versions = "5.0"
 end
