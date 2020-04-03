@@ -8,6 +8,10 @@
 
 import Foundation
 
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
+
 typealias CompletionHandler = (String?, Error?) -> Void
 
 func getPublicIPAddress(requestURL: URL, completion: @escaping CompletionHandler) {
@@ -20,10 +24,11 @@ func getPublicIPAddress(requestURL: URL, completion: @escaping CompletionHandler
             completion(nil, CustomError.noData)
             return
         }
-        guard let ipAddress = String(data: data, encoding: .utf8) else {
+        guard let result = String(data: data, encoding: .utf8) else {
             completion(nil, CustomError.undecodeable)
             return
         }
+        let ipAddress = String(result.filter { !" \n\t\r".contains($0) })
         completion(ipAddress, nil)
     }.resume()
 }
