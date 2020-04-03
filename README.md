@@ -1,12 +1,19 @@
 # Swift-Public-IP
+![LICENSE](https://img.shields.io/github/license/HackingGate/Swift-Public-IP)
+![Swift Workflow](https://img.shields.io/github/workflow/status/HackingGate/Swift-Public-IP/Swift)
+
 Swift library for checking your public IP address
 
-## Example
+Supports macOS, iOS, tvOS, watchOS and Linux.
+
+Uses [icanhazip](https://icanhazip.com), [ipv6test](https://v4v6.ipv6-test.com/api/myip.php), [seeip](https://ip.seeip.org), [whatismyipaddress](https://bot.whatismyipaddress.com), [ident](https://ident.me/) and etc.
+
+## Usage
 
 ```swift
 import SwiftPublicIP
 
-getPublicIP(url: PublicIPAPIURLs.ipv4.icanhazip.rawValue) { (string, error) in
+SwiftPublicIP.getPublicIP(url: PublicIPAPIURLs.ipv4.icanhazip.rawValue) { (string, error) in
     if let error = error {
         print(error.localizedDescription)
     } else if let string = string {
@@ -15,14 +22,14 @@ getPublicIP(url: PublicIPAPIURLs.ipv4.icanhazip.rawValue) { (string, error) in
 }
 ```
 
-## Installation
+## Implementation
 
 ### Carthage
 
 Add it in the Cartfile.
 
 ```
-github "HackingGate/Swift-Public-IP" "0.0.1"
+github "HackingGate/Swift-Public-IP" "0.0.2"
 ```
 
 Run `carthage update`.
@@ -34,7 +41,7 @@ Add the SwiftPublicIP framework as an embedded binary to your .xcodeproj file.
 Add it in the Podfile
 
 ```
-pod 'SwiftPublicIP', '~> 0.0.1'
+pod 'SwiftPublicIP', '~> 0.0.2'
 ```
 
 Run `pod install`.
@@ -53,7 +60,7 @@ import PackageDescription
 let package = Package(
     name: "YourAwesomeApp",
     dependencies: [
-        .package(url: "https://github.com/HackingGate/Swift-Public-IP", from: "0.0.1"),
+        .package(url: "https://github.com/HackingGate/Swift-Public-IP", from: "0.0.2"),
     ],
     targets: [
         .target(
