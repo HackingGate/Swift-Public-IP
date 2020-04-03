@@ -27,9 +27,8 @@ public enum PublicIPAPIURLs {
         
         case ipify = "https://api.ipify.org"
         
-        case amazonaws = "checkip.amazonaws.com"
+        case amazonaws = "https://checkip.amazonaws.com"
         case ipecho = "https://ipecho.net/plain"
-        case inetip = "inet-ip.info"
     }
     
     public enum ipv6: String, CaseIterable {
