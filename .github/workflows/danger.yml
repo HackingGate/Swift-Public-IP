@@ -9,15 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/setup-ruby@v1
+    - uses: ruby/setup-ruby@v1
       with:
         ruby-version: '3.0'
-    - uses: actions/cache@v1
-      with:
-        path: vendor/bundle
-        key: ${{ runner.os }}-gems-${{ hashFiles('Gemfile') }} # change your gemfile path
-        restore-keys: |
-          ${{ runner.os }}-gems-
+        bundler-cache: true
     - uses: MeilCli/danger-action@v5
       with:
         plugins_file: 'Gemfile'
