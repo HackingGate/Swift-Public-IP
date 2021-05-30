@@ -7,12 +7,12 @@
 //
 
 import Foundation
-import XCTest
 import SwiftPublicIP
+import XCTest
 
 class SwiftPublicIPTests: XCTestCase {
     func testPublicIP(_ url: String, _ exp: XCTestExpectation) {
-        SwiftPublicIP.getPublicIP(url: url) { (string, error) in
+        SwiftPublicIP.getPublicIP(url: url) { string, error in
             if let error = error {
                 XCTAssertNil(error, error.localizedDescription)
             } else if let string = string {
@@ -22,7 +22,7 @@ class SwiftPublicIPTests: XCTestCase {
             exp.fulfill()
         }
     }
-    
+
     // MARK: Hybrid
 
     func test_hybrid_icanhazip() {
