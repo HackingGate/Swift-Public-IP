@@ -6,6 +6,8 @@ on:
     branches: [ master ]
 jobs:
   danger:
+    container:
+      image: swift:5.4
     runs-on: ubuntu-latest
     if: github.event_name  == 'pull_request' # if only run pull request when multiple trigger workflow
     steps:
