@@ -16,11 +16,12 @@ import Foundation
 /// - parameter completion:     The result. IP address in a String.
 ///
 public func getPublicIP(url: String, completion: @escaping (String?, Error?) -> Void) {
-    guard let url = URL(string: url) else {
+
+    guard let url: URL = URL(string: url) else {
         fatalError("URL is not validate")
     }
-
-    getPublicIPAddress(requestURL: url) { result, error in
+    
+    getPublicIPAddress(requestURL: url) { (result, error) in
         completion(result, error)
     }
 }

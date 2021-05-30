@@ -9,13 +9,13 @@
 import Foundation
 
 #if canImport(FoundationNetworking)
-    import FoundationNetworking
+import FoundationNetworking
 #endif
 
 typealias CompletionHandler = (String?, Error?) -> Void
 
 func getPublicIPAddress(requestURL: URL, completion: @escaping CompletionHandler) {
-    URLSession.shared.dataTask(with: requestURL) { data, _, error in
+    URLSession.shared.dataTask(with: requestURL) { (data, response, error) in
         if let error = error {
             completion(nil, CustomError.error(error))
             return
@@ -42,7 +42,7 @@ enum CustomError: LocalizedError {
         switch self {
         case .noData:
             return "No data response."
-        case let .error(err):
+        case .error(let err):
             return err.localizedDescription
         case .undecodeable:
             return "Data undecodeable."
