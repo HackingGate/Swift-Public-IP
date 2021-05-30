@@ -1,7 +1,5 @@
-name: Swift
+name: Danger
 on:
-  push:
-    branches: [ master ]
   pull_request:
     branches: [ master ]
 jobs:
@@ -9,7 +7,6 @@ jobs:
     container:
       image: swift:5.4
     runs-on: ubuntu-latest
-    if: github.event_name  == 'pull_request' # if only run pull request when multiple trigger workflow
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-ruby@v1
@@ -29,11 +26,3 @@ jobs:
         danger_id: 'danger-pr'
       env:
         DANGER_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  codecov:
-    container:
-      image: swift:5.4
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - run: swift test --enable-test-discovery --enable-code-coverage --filter '^((?!ipv6).)*$'
-    - uses: mattpolzin/swift-codecov-action@0.6.1
