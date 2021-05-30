@@ -1,4 +1,4 @@
-# Xcode
+# XcodeA
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
@@ -66,3 +66,8 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
+
+
+# Custom
+Gemfile.lock
+BuildTools/Package.resolved
