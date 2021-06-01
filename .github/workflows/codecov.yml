@@ -6,10 +6,9 @@ on:
     branches: [ master ]
 jobs:
   codecov:
-    container:
-      image: swift:5.4
     runs-on: ubuntu-latest
     steps:
+    - uses: fwal/setup-swift@v1
     - name: Install Dependencies
       run: |
         sudo apt update
