@@ -6,13 +6,16 @@ jobs:
   danger:
     runs-on: ubuntu-20.04
     steps:
-    - uses: actions/checkout@v2
+    - uses: fwal/setup-swift@v1
+    - name: Get swift version
+      run: swift --version
     - uses: ruby/setup-ruby@v1
       with:
         ruby-version: '3.0'
         bundler-cache: true
       env:
         ImageOS: ubuntu20
+    - uses: actions/checkout@v2
     - uses: MeilCli/danger-action@v5
       with:
         plugins_file: 'Gemfile'
