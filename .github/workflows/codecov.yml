@@ -12,7 +12,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: swift test --enable-code-coverage --filter '^((?!ipv6).)*$'
-    - run: bash <(curl -s https://codecov.io/bash)
     - uses: codecov/codecov-action@v1
       with:
         flags: unittests

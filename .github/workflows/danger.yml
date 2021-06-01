@@ -4,6 +4,7 @@ on:
     paths:
       - '.swiftlint.yml'
       - '**/*.swift'
+      - '.github/workflows/danger.yml'
 jobs:
   Danger:
     runs-on: ubuntu-latest
