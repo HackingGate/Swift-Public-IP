@@ -10,6 +10,10 @@ jobs:
       image: swift:5.4
     runs-on: ubuntu-latest
     steps:
+    - name: Install Dependencies
+      run: |
+        sudo apt update
+        sudo apt install curl -y
     - uses: actions/checkout@v2
     - run: swift test --enable-code-coverage --filter '^((?!ipv6).)*$'
     - uses: codecov/codecov-action@v1
