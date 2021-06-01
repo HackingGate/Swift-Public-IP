@@ -13,8 +13,8 @@ jobs:
       with:
         ruby-version: '3.0'
         bundler-cache: true
-        env:
-          ImageOS: ubuntu20
+      env:
+        ImageOS: ubuntu20
     - uses: MeilCli/danger-action@v5
       with:
         plugins_file: 'Gemfile'
