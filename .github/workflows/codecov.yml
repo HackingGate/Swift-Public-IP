@@ -9,6 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: uname -a
+    - run: |
+        sudo apt update
+        sudo apt install tree -a
     - uses: fwal/setup-swift@v1
     - name: Install Dependencies
       run: |
@@ -16,7 +19,7 @@ jobs:
         sudo apt install curl -y
     - uses: actions/checkout@v2
     - run: swift test --enable-code-coverage --filter '^((?!ipv6).)*$'
-    - run: ls **/*
+    - run: tre -a
     - run: llvm-cov report .build/x86_64-unknown-linux-gnu/debug/PredicatePackageTests.xctest -instr-profile=.build/x86_64-unknown-linux-gnu/debug/codecov/default.profdata -use-color
     - uses: codecov/codecov-action@v1
       with:
