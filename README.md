@@ -1,6 +1,7 @@
 # Swift-Public-IP
 ![LICENSE](https://img.shields.io/github/license/HackingGate/Swift-Public-IP)
-![Swift Workflow](https://img.shields.io/github/workflow/status/HackingGate/Swift-Public-IP/Swift)
+[![SwiftLint](https://github.com/HackingGate/Swift-Public-IP/actions/workflows/swiftlint.yml/badge.svg)](https://github.com/HackingGate/Swift-Public-IP/actions/workflows/swiftlint.yml)
+[![codecov](https://codecov.io/gh/HackingGate/Swift-Public-IP/branch/master/graph/badge.svg?token=euyimOnZ1U)](https://codecov.io/gh/HackingGate/Swift-Public-IP)
 
 Swift library for checking your public IP address
 
