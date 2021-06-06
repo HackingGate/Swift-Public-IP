@@ -6,7 +6,7 @@ import Foundation
 func shell(_ args: String...) -> String? {
     let task = Process()
     let pipe = Pipe()
-    
+
     task.executableURL = URL(fileURLWithPath: "/usr/bin/env")
     task.arguments = args
     task.standardOutput = pipe

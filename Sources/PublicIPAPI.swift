@@ -15,7 +15,7 @@ import FoundationNetworking
 typealias CompletionHandler = (String?, Error?) -> Void
 
 func getPublicIPAddress(requestURL: URL, completion: @escaping CompletionHandler) {
-    URLSession.shared.dataTask(with: requestURL) { (data, response, error) in
+    URLSession.shared.dataTask(with: requestURL) { (data, _, error) in
         if let error = error {
             completion(nil, CustomError.error(error))
             return

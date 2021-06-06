@@ -20,7 +20,7 @@ public func getPublicIP(url: String, completion: @escaping (String?, Error?) -> 
     guard let url: URL = URL(string: url) else {
         fatalError("URL is not validate")
     }
-    
+
     getPublicIPAddress(requestURL: url) { (result, error) in
         completion(result, error)
     }

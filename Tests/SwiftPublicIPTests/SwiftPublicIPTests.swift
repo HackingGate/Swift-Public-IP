@@ -22,7 +22,7 @@ class SwiftPublicIPTests: XCTestCase {
             exp.fulfill()
         }
     }
-    
+
     // MARK: Hybrid
 
     func test_hybrid_icanhazip() {
@@ -170,6 +170,6 @@ class SwiftPublicIPTests: XCTestCase {
         ("test_ipv6_whatismyipaddress", test_ipv6_whatismyipaddress),
         ("test_ipv6_ident", test_ipv6_ident),
 
-        ("test_ipv6_ipify", test_ipv6_ipify),
+        ("test_ipv6_ipify", test_ipv6_ipify)
     ]
 }
