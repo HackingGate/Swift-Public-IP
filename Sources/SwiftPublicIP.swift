@@ -10,8 +10,8 @@ import Foundation
 
 /// Get public IP address from specified API. Including icanhazip, ipv6-test...
 ///
-/// - parameter url:            The API URL. Use `PublicIPAPIURLs` class. `ipv4` for IPv4 only,
-/// `ipv6` for IPv6 only, `hybrid` for both IPv4 or IPv6. You can use custom API URL but make sure
+/// - parameter url:            The API URL. Use `PublicIPAPIURLs` class. `IPv4` for IPv4 network only,
+/// `IPv6` for IPv6 network only, `Hybrid` for both IPv4 or IPv6 networks. You can use custom API URL but make sure
 /// it returns vilidate IP address.
 /// - parameter completion:     The result. IP address in a String.
 ///

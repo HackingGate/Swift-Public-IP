@@ -12,8 +12,7 @@ import SwiftPublicIP
 print("Hello, World!")
 
 var sema = DispatchSemaphore(value: 0)
-
-SwiftPublicIP.getPublicIP(url: PublicIPAPIURLs.ipv4.icanhazip.rawValue) { (string, error) in
+SwiftPublicIP.getPublicIP(url: PublicIPAPIURLs.IPv4.icanhazip.rawValue) { string, error in
     if let error = error {
         print(error.localizedDescription)
     } else if let string = string {

@@ -10,7 +10,7 @@ import Foundation
 
 public enum PublicIPAPIURLs {
 
-    public enum hybrid: String, CaseIterable {
+    public enum Hybrid: String, CaseIterable {
         case icanhazip = "https://icanhazip.com"
         case ipv6test = "https://v4v6.ipv6-test.com/api/myip.php"
         case seeip = "https://ip.seeip.org"
@@ -18,7 +18,7 @@ public enum PublicIPAPIURLs {
         case ident = "https://ident.me/"
     }
 
-    public enum ipv4: String, CaseIterable {
+    public enum IPv4: String, CaseIterable {
         case icanhazip = "https://ipv4.icanhazip.com"
         case ipv6test = "https://v4.ipv6-test.com/api/myip.php"
         case seeip = "https://ip4.seeip.org"
@@ -31,7 +31,7 @@ public enum PublicIPAPIURLs {
         case ipecho = "https://ipecho.net/plain"
     }
 
-    public enum ipv6: String, CaseIterable {
+    public enum IPv6: String, CaseIterable {
         case icanhazip = "https://ipv6.icanhazip.com"
         case ipv6test = "https://v6.ipv6-test.com/api/myip.php"
         case seeip = "https://ip6.seeip.org"
