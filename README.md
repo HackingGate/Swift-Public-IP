@@ -1,6 +1,7 @@
 # Swift-Public-IP
 ![LICENSE](https://img.shields.io/github/license/HackingGate/Swift-Public-IP)
-![Swift Workflow](https://img.shields.io/github/workflow/status/HackingGate/Swift-Public-IP/Swift)
+[![SwiftLint](https://github.com/HackingGate/Swift-Public-IP/actions/workflows/swiftlint.yml/badge.svg)](https://github.com/HackingGate/Swift-Public-IP/actions/workflows/swiftlint.yml)
+[![codecov](https://codecov.io/gh/HackingGate/Swift-Public-IP/branch/master/graph/badge.svg?token=euyimOnZ1U)](https://codecov.io/gh/HackingGate/Swift-Public-IP)
 
 Swift library for checking your public IP address
 
@@ -13,7 +14,7 @@ Uses [icanhazip](https://icanhazip.com), [ipv6test](https://v4v6.ipv6-test.com/a
 ```swift
 import SwiftPublicIP
 
-SwiftPublicIP.getPublicIP(url: PublicIPAPIURLs.ipv4.icanhazip.rawValue) { (string, error) in
+SwiftPublicIP.getPublicIP(url: PublicIPAPIURLs.IPv4.icanhazip.rawValue) { (string, error) in
     if let error = error {
         print(error.localizedDescription)
     } else if let string = string {

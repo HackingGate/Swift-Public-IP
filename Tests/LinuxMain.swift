@@ -2,5 +2,5 @@ import XCTest
 @testable import SwiftPublicIPTests
 
 XCTMain([
-    testCase(SwiftPublicIPTests.allTests),
+    testCase(SwiftPublicIPTests.allTests)
 ])

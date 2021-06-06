@@ -1,0 +1,23 @@
+name: Test
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+jobs:
+  codecov:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: fwal/setup-swift@v1
+    - run: swift -print-target-info | jq
+    - uses: actions/checkout@v2
+    - run: swift test --enable-code-coverage --filter '^((?!ipv6).)*$'
+    - run: tree -a
+    - run: llvm-cov report .build/x86_64-unknown-linux-gnu/debug/SwiftPublicIPPackageTests.xctest -instr-profile=.build/x86_64-unknown-linux-gnu/debug/codecov/default.profdata -use-color | tee Coverage.report
+    - uses: codecov/codecov-action@v1
+      with:
+        files: Coverage.report
+        flags: unittests
+        name: codecov-umbrella
+        fail_ci_if_error: true
+        verbose: true
