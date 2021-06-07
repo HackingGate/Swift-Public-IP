@@ -12,7 +12,7 @@ jobs:
     - name: Test with Code Coverage
       run: swift test --enable-code-coverage --filter '^((?!ipv6).)*$'
     - name: Link Codecov Report
-      run: ln `swift test --show-codecov-path` Codecov-report.json
+      run: cp `swift test --show-codecov-path` Codecov-report.json
     - uses: codecov/codecov-action@v1
       with:
         files: Codecov-report.json
