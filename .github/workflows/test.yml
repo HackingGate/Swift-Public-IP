@@ -9,10 +9,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - run: swift test --enable-code-coverage --filter '^((?!ipv6).)*$'
+    - name: Test with Code Coverage
+      run: swift test --enable-code-coverage --filter '^((?!ipv6).)*$'
+    - name: Link Codecov Report
+      run: ln `swift test --show-codecov-path` Codecov-report.json
     - uses: codecov/codecov-action@v1
       with:
-        files: swift test --show-codecov-path
+        files: Codecov-report.json
         flags: unittests
         name: codecov-umbrella
         fail_ci_if_error: true
