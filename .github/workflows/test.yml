@@ -1,27 +1,37 @@
 name: Test
+
 on:
   push:
     branches: [ master ]
   pull_request:
     branches: [ master ]
+
 jobs:
   test:
+    container:
+      image: swift
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: Test with Code Coverage
       run: swift test --enable-code-coverage --filter '^((?!ipv6).)*$'
-    - name: Generate Codecov Report In Docker
-      run: |
-        docker pull swift
-        docker run -v ${PWD}:/mnt/working -it swift /bin/bash
-        cd /mnt/working/
-        llvm-cov export -format="lcov" .build/debug/SwiftPublicIPPackageTests.xctest -instr-profile .build/debug/codecov/default.profdata > info.lcov
-        exit
+    - name: Generate Codecov Report
+      run: llvm-cov export -format="lcov" .build/debug/SwiftPublicIPPackageTests.xctest -instr-profile .build/debug/codecov/default.profdata > SwiftPublicIPPackageTests.lcov
+    - uses: actions/upload-artifact@v2
+      with:
+        name: ${{ env.GITHUB_RUN_ID }}-codecov
+        path: SwiftPublicIPPackageTests.lcov
+  codecov:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/download-artifact@v2
+      with:
+        name: ${{ env.GITHUB_RUN_ID }}-codecov
+        path: SwiftPublicIPPackageTests.lcov
     - uses: codecov/codecov-action@v1
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
-        files: ./info.lcov
+        files: ./SwiftPublicIPPackageTests.lcov
         flags: unittests
         name: codecov-umbrella
         fail_ci_if_error: true
