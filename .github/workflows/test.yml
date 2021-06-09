@@ -11,12 +11,12 @@ jobs:
     - uses: actions/checkout@v2
     - name: Test with Code Coverage
       run: swift test --enable-code-coverage --filter '^((?!ipv6).)*$'
-    - name: Link Codecov Report
-      run: ln `swift test --show-codecov-path` Codecov-report.json
+    - name: Copy Codecov Report
+      run: cp `swift test --show-codecov-path` coverage.json
     - uses: codecov/codecov-action@v1
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
-        files: ./Codecov-report.json
+        files: ./coverage.json
         flags: unittests
         name: codecov-umbrella
         fail_ci_if_error: true
