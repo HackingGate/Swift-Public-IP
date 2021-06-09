@@ -11,12 +11,12 @@ jobs:
     - uses: actions/checkout@v2
     - name: Test with Code Coverage
       run: swift test --enable-code-coverage --filter '^((?!ipv6).)*$'
-    - name: Copy Codecov Report
-      run: cp `swift test --show-codecov-path` coverage.json
+    - name: Generate Codecov Report
+      run: llvm-cov export -format="lcov" .build/debug/SwiftPublicIPPackageTests.xctest -instr-profile .build/debug/codecov/default.profdata > info.lcov
     - uses: codecov/codecov-action@v1
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
-        files: ./coverage.json
+        files: ./info.lcov
         flags: unittests
         name: codecov-umbrella
         fail_ci_if_error: true
