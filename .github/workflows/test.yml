@@ -6,15 +6,18 @@ on:
     branches: [ master ]
 jobs:
   test:
-    container:
-      image: swift
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: Test with Code Coverage
       run: swift test --enable-code-coverage --filter '^((?!ipv6).)*$'
-    - name: Generate Codecov Report
-      run: llvm-cov export -format="lcov" .build/debug/SwiftPublicIPPackageTests.xctest -instr-profile .build/debug/codecov/default.profdata > info.lcov
+    - name: Generate Codecov Report In Docker
+      run: |
+        docker pull swift
+        docker run -v ${PWD}:/mnt/working -it swift /bin/bash
+        cd /mnt/working/
+        llvm-cov export -format="lcov" .build/debug/SwiftPublicIPPackageTests.xctest -instr-profile .build/debug/codecov/default.profdata > info.lcov
+        exit
     - uses: codecov/codecov-action@v1
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
