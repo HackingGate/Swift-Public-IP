@@ -19,14 +19,15 @@ jobs:
       run: llvm-cov export -format="lcov" .build/debug/SwiftPublicIPPackageTests.xctest -instr-profile .build/debug/codecov/default.profdata > SwiftPublicIPPackageTests.lcov
     - uses: actions/upload-artifact@v2
       with:
-        name: ${{ env.GITHUB_RUN_ID }}-codecov
+        name: ${{ github.run_id }}-codecov
         path: SwiftPublicIPPackageTests.lcov
   codecov:
+    needs: test
     runs-on: ubuntu-latest
     steps:
     - uses: actions/download-artifact@v2
       with:
-        name: ${{ env.GITHUB_RUN_ID }}-codecov
+        name: ${{ github.run_id }}-codecov
         path: SwiftPublicIPPackageTests.lcov
     - uses: codecov/codecov-action@v1
       with:
