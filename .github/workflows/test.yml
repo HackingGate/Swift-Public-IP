@@ -22,6 +22,8 @@ jobs:
       run: |
         mkdir -p coverage
         llvm-cov export -format="lcov" .build/debug/SwiftPublicIPPackageTests.xctest -instr-profile .build/debug/codecov/default.profdata > ./coverage/lcov.info
+    - name: Convert Absolute Path to Relative Path
+      run: sed -i "s~/__w/Swift-Public-IP/Swift-Public-IP/~~g" ./coverage/lcov.info
     - uses: actions/upload-artifact@v2
       with:
         name: ${{ github.run_id }}-codecov
