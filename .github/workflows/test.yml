@@ -63,7 +63,7 @@ jobs:
               })
             } else if (context.eventName === "push") {
               github.issues.createCommitComment({
-                commit_sha: options.commit,
+                commit_sha: context.sha,
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 body: data
