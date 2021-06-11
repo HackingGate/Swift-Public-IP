@@ -35,7 +35,7 @@ jobs:
         name: ${{ github.run_id }}-codecov
         path: ./coverage/
     - run: ls -R
-    - uses: HackingGate/lcov-reporter-action@50d98a6e28f590b6e996f436bd726b93b7157a23
+    - uses: HackingGate/lcov-reporter-action@abccf7fbb7f35f7956e4a5fb8c1f49c3ba172167
     - run: cat ./coverage/body.html
     - uses: actions/github-script@v4
       with:
