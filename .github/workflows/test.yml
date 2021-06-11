@@ -40,26 +40,24 @@ jobs:
     - uses: actions/github-script@v4
       with:
         script: |
-          const path = require('path')
-          const body = require(path.resolve('./coverage/body.html'))({context})
           fs = require('fs');
           fs.readFile('./coverage/body.html', 'utf8', function (error,data) {
             if (error) {
-              core.debug(error)
+              console.log(error)
             }
             if (context.eventName === "pull_request") {
               github.issues.createComment({
                 issue_number: context.issue.number,
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                body: `${data}`
+                body: data
               })
             } else if (context.eventName === "push") {
               github.issues.createCommitComment({
                 commit_sha: options.commit,
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                body: `${data}`
+                body: data
               })
             }
           });
