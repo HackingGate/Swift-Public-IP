@@ -38,7 +38,7 @@ jobs:
     - uses: HackingGate/lcov-reporter-action@8e0e2f75214b17f82a09ba15ad79ab96b25c7cf4
     - name: Create Comment if Pull Request
       uses: actions/github-script@v4
-      if: ${{ github.event_name === 'pull_request' }}
+      if: ${{ github.event_name == 'pull_request' }}
       with:
         script: |
           github.issues.createComment({
@@ -49,7 +49,7 @@ jobs:
           })
     - name: Create Commit Comment if Push
       uses: actions/github-script@v4
-      if: ${{ github.event_name === 'push' }}
+      if: ${{ github.event_name == 'push' }}
       with:
         script: |
           github.issues.createCommitComment({
