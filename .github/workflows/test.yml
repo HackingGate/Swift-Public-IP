@@ -29,11 +29,7 @@ jobs:
       run: sed -i "s~${PWD}/~~g" ./coverage/lcov.info
     - uses: actions/upload-artifact@v2
       with:
-        name: ${{ github.head_ref }}-codecov
-        path: ./coverage/lcov-base.info
-    - uses: actions/upload-artifact@v2
-      with:
-        name: ${{ github.run_id }}-codecov
+        name: lcov.info
         path: ./coverage/lcov.info
         retention-days: 1
   codecov:
@@ -41,13 +37,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/download-artifact@v2
-      if: ${{ github.event_name == 'pull_request' }}
       with:
-        name: ${{ github.base_ref }}-codecov
-        path: ./coverage/
-    - uses: actions/download-artifact@v2
-      with:
-        name: ${{ github.run_id }}-codecov
+        name: lcov.info
         path: ./coverage/
     - run: ls -R
     - uses: HackingGate/lcov-reporter-action@7bf132b5f872f17fde607a37b7ca2308510abbb4
