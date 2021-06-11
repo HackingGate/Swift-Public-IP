@@ -40,6 +40,7 @@ jobs:
       uses: actions/github-script@v4
       if: ${{ github.event_name == 'pull_request' }}
       with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
         script: |
           github.issues.createComment({
             issue_number: context.issue.number,
@@ -51,6 +52,7 @@ jobs:
       uses: actions/github-script@v4
       if: ${{ github.event_name == 'push' }}
       with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
         script: |
           github.issues.createCommitComment({
             commit_sha: options.commit,
