@@ -35,4 +35,24 @@ jobs:
         name: ${{ github.run_id }}-codecov
         path: ./coverage/
     - run: ls -R
-    - uses: romeovs/lcov-reporter-action@v0.2.16
+    - uses: HackingGate/lcov-reporter-action@8e0e2f75214b17f82a09ba15ad79ab96b25c7cf4
+    - uses: actions/github-script@v4
+      if: ${{ context.eventName === "pull_request" }}
+        with:
+          script: |
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: ./coverage/body.html
+            })
+    - uses: actions/github-script@v4
+      if: ${{ context.eventName === "push" }}
+        with:
+          script: |
+            github.issues.createCommitComment({
+              commit_sha: options.commit,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: ./coverage/body.html
+            })
