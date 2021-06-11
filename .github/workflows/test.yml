@@ -36,25 +36,30 @@ jobs:
         path: ./coverage/
     - run: ls -R
     - uses: HackingGate/lcov-reporter-action@8e0e2f75214b17f82a09ba15ad79ab96b25c7cf4
-    - name: Create Comment if Pull Request
-      uses: actions/github-script@v4
-      if: ${{ github.event_name == 'pull_request' }}
+    - run: cat ./coverage/body.html
+    - uses: actions/github-script@v4
       with:
         script: |
-          github.issues.createComment({
-            issue_number: context.issue.number,
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            body: ./coverage/body.html
-          })
-    - name: Create Commit Comment if Push
-      uses: actions/github-script@v4
-      if: ${{ github.event_name == 'push' }}
-      with:
-        script: |
-          github.issues.createCommitComment({
-            commit_sha: options.commit,
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            body: ./coverage/body.html
-          })
+          const path = require('path')
+          const body = require(path.resolve('./coverage/body.html'))({context})
+          fs = require('fs');
+          fs.readFile('./coverage/body.html', 'utf8', function (error,data) {
+            if (error) {
+              core.debug(error)
+            }
+            if (context.eventName === "pull_request") {
+              github.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: data
+              })
+            } else if (context.eventName === "push") {
+              github.issues.createCommitComment({
+                commit_sha: options.commit,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: data
+              })
+            }
+          });
