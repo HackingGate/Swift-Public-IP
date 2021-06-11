@@ -33,6 +33,6 @@ jobs:
     - uses: actions/download-artifact@v2
       with:
         name: ${{ github.run_id }}-codecov
-        path: ./coverage/lcov.info
+        path: ./coverage/
     - run: ls -R
     - uses: romeovs/lcov-reporter-action@v0.2.16
