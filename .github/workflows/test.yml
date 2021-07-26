@@ -41,7 +41,7 @@ jobs:
         name: lcov.info
         path: ./coverage/
     - run: ls -R
-    - uses: HackingGate/lcov-reporter-action@7bf132b5f872f17fde607a37b7ca2308510abbb4
+    - uses: HackingGate/lcov-reporter-action@a1c0d02b814fedd5aff86d9e7eac73834eb6e091
       with:
         lcov-base: ./coverage/lcov-base.info
         lcov-file: ./coverage/lcov.info
