@@ -27,7 +27,7 @@ jobs:
         llvm-cov export -format="lcov" .build/debug/SwiftPublicIPPackageTests.xctest -instr-profile .build/debug/codecov/default.profdata > ./coverage/lcov.info
     - name: Convert Absolute Path to Relative Path
       run: sed -i "s~${PWD}/~~g" ./coverage/lcov.info
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       with:
         name: lcov.info
         path: ./coverage/lcov.info
@@ -36,7 +36,7 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/download-artifact@v3
+    - uses: actions/download-artifact@v4
       with:
         name: lcov.info
         path: ./coverage/
