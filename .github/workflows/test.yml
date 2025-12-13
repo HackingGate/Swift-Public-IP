@@ -43,10 +43,19 @@ jobs:
     - run: ls -R
     - uses: HackingGate/lcov-reporter-action@a1c0d02b814fedd5aff86d9e7eac73834eb6e091
       with:
-        lcov-base: ./coverage/lcov-base.info
         lcov-file: ./coverage/lcov.info
-    - run: cat ./coverage/body.html
+    - name: Check if body.html exists
+      id: check_body
+      run: |
+        if [ -f ./coverage/body.html ]; then
+          echo "exists=true" >> $GITHUB_OUTPUT
+          cat ./coverage/body.html
+        else
+          echo "exists=false" >> $GITHUB_OUTPUT
+          echo "body.html not found, skipping coverage comment"
+        fi
     - uses: actions/github-script@v6
+      if: steps.check_body.outputs.exists == 'true'
       with:
         script: |
           fs = require('fs');
@@ -55,14 +64,14 @@ jobs:
               console.log(error)
             }
             if (context.eventName === "pull_request") {
-              github.issues.createComment({
+              github.rest.issues.createComment({
                 issue_number: context.issue.number,
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 body: data
               })
             } else if (context.eventName === "push") {
-              github.repos.createCommitComment({
+              github.rest.repos.createCommitComment({
                 commit_sha: context.sha,
                 owner: context.repo.owner,
                 repo: context.repo.repo,
