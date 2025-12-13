@@ -13,7 +13,7 @@ Uses [icanhazip](https://icanhazip.com), [ipify](https://www.ipify.org), [ifconf
 ```swift
 import SwiftPublicIP
 
-SwiftPublicIP.getPublicIP(url: PublicIPAPIURLs.IPv4.icanhazip.rawValue) { (string, error) in
+SwiftPublicIP.getPublicIP(url: PublicIPAPIURLs.ipv4.icanhazip.rawValue) { (string, error) in
     if let error = error {
         print(error.localizedDescription)
     } else if let string = string {
