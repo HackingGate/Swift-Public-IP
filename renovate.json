@@ -1,5 +1,14 @@
 {
   "extends": [
     "config:base"
+  ],
+  "schedule": [
+    "before 3am on Monday"
+  ],
+  "packageRules": [
+    {
+      "updateTypes": ["minor", "patch"],
+      "automerge": true
+    }
   ]
 }
