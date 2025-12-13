@@ -3,7 +3,7 @@
     "config:base"
   ],
   "schedule": [
-    "every weekend"
+    "before 3am on Monday"
   ],
   "automerge": true
 }
