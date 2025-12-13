@@ -6,7 +6,7 @@ Swift library for checking your public IP address
 
 Supports macOS, iOS, tvOS, watchOS and Linux.
 
-Uses [icanhazip](https://icanhazip.com), [ipv6test](https://v4v6.ipv6-test.com/api/myip.php), [seeip](https://ip.seeip.org), [whatismyipaddress](https://bot.whatismyipaddress.com), [ident](https://ident.me/) and etc.
+Uses [icanhazip](https://icanhazip.com), [ipify](https://www.ipify.org), [ifconfig.me](https://ifconfig.me), [my-ip.io](https://www.my-ip.io), [ident.me](https://ident.me/), [AWS checkip](https://checkip.amazonaws.com), and [ipinfo.io](https://ipinfo.io).
 
 ## Usage
 

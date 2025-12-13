@@ -31,21 +31,21 @@ class SwiftPublicIPTests: XCTestCase {
         waitForExpectations(timeout: 40, handler: nil)
     }
 
-    func test_hybrid_ipv6test() {
+    func test_hybrid_ipify() {
         let exp = expectation(description: "\(#function)\(#line)")
-        testPublicIP(PublicIPAPIURLs.Hybrid.ipv6test.rawValue, exp)
+        testPublicIP(PublicIPAPIURLs.Hybrid.ipify.rawValue, exp)
         waitForExpectations(timeout: 40, handler: nil)
     }
 
-    func test_hybrid_seeip() {
+    func test_hybrid_ifconfigMe() {
         let exp = expectation(description: "\(#function)\(#line)")
-        testPublicIP(PublicIPAPIURLs.Hybrid.seeip.rawValue, exp)
+        testPublicIP(PublicIPAPIURLs.Hybrid.ifconfigMe.rawValue, exp)
         waitForExpectations(timeout: 40, handler: nil)
     }
 
-    func test_hybrid_whatismyipaddress() {
+    func test_hybrid_myip() {
         let exp = expectation(description: "\(#function)\(#line)")
-        testPublicIP(PublicIPAPIURLs.Hybrid.whatismyipaddress.rawValue, exp)
+        testPublicIP(PublicIPAPIURLs.Hybrid.myip.rawValue, exp)
         waitForExpectations(timeout: 40, handler: nil)
     }
 
@@ -63,21 +63,21 @@ class SwiftPublicIPTests: XCTestCase {
         waitForExpectations(timeout: 40, handler: nil)
     }
 
-    func test_ipv4_ipv6test() {
+    func test_ipv4_ipify() {
         let exp = expectation(description: "\(#function)\(#line)")
-        testPublicIP(PublicIPAPIURLs.IPv4.ipv6test.rawValue, exp)
+        testPublicIP(PublicIPAPIURLs.IPv4.ipify.rawValue, exp)
         waitForExpectations(timeout: 40, handler: nil)
     }
 
-    func test_ipv4_seeip() {
+    func test_ipv4_ifconfigMe() {
         let exp = expectation(description: "\(#function)\(#line)")
-        testPublicIP(PublicIPAPIURLs.IPv4.seeip.rawValue, exp)
+        testPublicIP(PublicIPAPIURLs.IPv4.ifconfigMe.rawValue, exp)
         waitForExpectations(timeout: 40, handler: nil)
     }
 
-    func test_ipv4_whatismyipaddress() {
+    func test_ipv4_myip() {
         let exp = expectation(description: "\(#function)\(#line)")
-        testPublicIP(PublicIPAPIURLs.IPv4.whatismyipaddress.rawValue, exp)
+        testPublicIP(PublicIPAPIURLs.IPv4.myip.rawValue, exp)
         waitForExpectations(timeout: 40, handler: nil)
     }
 
@@ -87,21 +87,15 @@ class SwiftPublicIPTests: XCTestCase {
         waitForExpectations(timeout: 40, handler: nil)
     }
 
-    func test_ipv4_ipify() {
-        let exp = expectation(description: "\(#function)\(#line)")
-        testPublicIP(PublicIPAPIURLs.IPv4.ipify.rawValue, exp)
-        waitForExpectations(timeout: 40, handler: nil)
-    }
-
     func test_ipv4_amazonaws() {
         let exp = expectation(description: "\(#function)\(#line)")
         testPublicIP(PublicIPAPIURLs.IPv4.amazonaws.rawValue, exp)
         waitForExpectations(timeout: 40, handler: nil)
     }
 
-    func test_ipv4_ipecho() {
+    func test_ipv4_ipinfo() {
         let exp = expectation(description: "\(#function)\(#line)")
-        testPublicIP(PublicIPAPIURLs.IPv4.ipecho.rawValue, exp)
+        testPublicIP(PublicIPAPIURLs.IPv4.ipinfo.rawValue, exp)
         waitForExpectations(timeout: 40, handler: nil)
     }
 
@@ -113,21 +107,21 @@ class SwiftPublicIPTests: XCTestCase {
         waitForExpectations(timeout: 40, handler: nil)
     }
 
-    func test_ipv6_ipv6test() {
+    func test_ipv6_ipify() {
         let exp = expectation(description: "\(#function)\(#line)")
-        testPublicIP(PublicIPAPIURLs.IPv6.ipv6test.rawValue, exp)
+        testPublicIP(PublicIPAPIURLs.IPv6.ipify.rawValue, exp)
         waitForExpectations(timeout: 40, handler: nil)
     }
 
-    func test_ipv6_seeip() {
+    func test_ipv6_ifconfigMe() {
         let exp = expectation(description: "\(#function)\(#line)")
-        testPublicIP(PublicIPAPIURLs.IPv6.seeip.rawValue, exp)
+        testPublicIP(PublicIPAPIURLs.IPv6.ifconfigMe.rawValue, exp)
         waitForExpectations(timeout: 40, handler: nil)
     }
 
-    func test_ipv6_whatismyipaddress() {
+    func test_ipv6_myip() {
         let exp = expectation(description: "\(#function)\(#line)")
-        testPublicIP(PublicIPAPIURLs.IPv6.whatismyipaddress.rawValue, exp)
+        testPublicIP(PublicIPAPIURLs.IPv6.myip.rawValue, exp)
         waitForExpectations(timeout: 40, handler: nil)
     }
 
@@ -137,39 +131,28 @@ class SwiftPublicIPTests: XCTestCase {
         waitForExpectations(timeout: 40, handler: nil)
     }
 
-    func test_ipv6_ipify() {
-        let exp = expectation(description: "\(#function)\(#line)")
-        testPublicIP(PublicIPAPIURLs.IPv6.ipify.rawValue, exp)
-        waitForExpectations(timeout: 40, handler: nil)
-    }
-
     static var allTests = [
         // Hybrid
         ("test_hybrid_icanhazip", test_hybrid_icanhazip),
-        ("test_hybrid_ipv6test", test_hybrid_ipv6test),
-        ("test_hybrid_seeip", test_hybrid_seeip),
-        ("test_hybrid_whatismyipaddress", test_hybrid_whatismyipaddress),
+        ("test_hybrid_ipify", test_hybrid_ipify),
+        ("test_hybrid_ifconfigMe", test_hybrid_ifconfigMe),
+        ("test_hybrid_myip", test_hybrid_myip),
         ("test_hybrid_ident", test_hybrid_ident),
 
         // IPv4
         ("test_ipv4_icanhazip", test_ipv4_icanhazip),
-        ("test_ipv4_ipv6test", test_ipv4_ipv6test),
-        ("test_ipv4_seeip", test_ipv4_seeip),
-        ("test_ipv4_whatismyipaddress", test_ipv4_whatismyipaddress),
-        ("test_ipv4_ident", test_ipv4_ident),
-
         ("test_ipv4_ipify", test_ipv4_ipify),
-
+        ("test_ipv4_ifconfigMe", test_ipv4_ifconfigMe),
+        ("test_ipv4_myip", test_ipv4_myip),
+        ("test_ipv4_ident", test_ipv4_ident),
         ("test_ipv4_amazonaws", test_ipv4_amazonaws),
-        ("test_ipv4_ipecho", test_ipv4_ipecho),
+        ("test_ipv4_ipinfo", test_ipv4_ipinfo),
 
         // IPv6
         ("test_ipv6_icanhazip", test_ipv6_icanhazip),
-        ("test_ipv6_ipv6test", test_ipv6_ipv6test),
-        ("test_ipv6_seeip", test_ipv6_seeip),
-        ("test_ipv6_whatismyipaddress", test_ipv6_whatismyipaddress),
-        ("test_ipv6_ident", test_ipv6_ident),
-
-        ("test_ipv6_ipify", test_ipv6_ipify)
+        ("test_ipv6_ipify", test_ipv6_ipify),
+        ("test_ipv6_ifconfigMe", test_ipv6_ifconfigMe),
+        ("test_ipv6_myip", test_ipv6_myip),
+        ("test_ipv6_ident", test_ipv6_ident)
     ]
 }
